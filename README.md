@@ -4,6 +4,14 @@
 
 ## 安装
 
+在 **插件 → 添加插件** 中输入 `github:IdaWasHere/dsh-chat-to-article`，或使用命令行：
+
+```sh
+dsh plugin --profile desktop add github:IdaWasHere/dsh-chat-to-article
+```
+
+Web 版将 `desktop` 改为 `web`。安装前请检查源码；本插件并非 DeepSeek 官方插件。
+
 在 DeepSeek Harness 中打开 **插件 → 添加插件**，选择本地目录，输入本文件夹的绝对路径。安装或更新后按应用提示重载插件或重启应用。命令行 profile 也可在本文件夹的上级目录执行：
 
 ```sh
@@ -30,3 +38,9 @@ dsh plugin --profile web add ./dsh-chat-to-article
 - `package.json`：安装清单。
 
 插件只在点击“测试连接”或“生成文章”时向选定服务商发送请求。生成文章时，API Key 作为 Host 侧 Authorization 请求头发送，浏览器前端不会读回 Key。
+
+## 隐私与限制
+
+仓库不包含 API Key 或私人对话。生成时会将当前已加载的对话（删除排除原文后）发送给所选的 OpenAI 或 DeepSeek 服务。标记及其对应的整条消息保存在本机浏览器 localStorage；模型配置及 API Key 保存在本机 DSH Host 的 JSON 文件中，未加密，写入权限为仅当前用户读写。移除标记可删除该条本地标记记录；编辑后的文章不会重新自动检查。
+
+逐字检查无法识别同义改写。仅使用当前页面已加载的文本，不包含未加载历史。本插件以 DSH 进程权限运行。

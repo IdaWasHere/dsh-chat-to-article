@@ -4,12 +4,48 @@
   "private": true,
   "type": "module",
   "main": "./index.js",
-  "scripts": { "test": "node --test" },
-  "exports": { ".": "./index.js", "./client": "./client.js", "./package.json": "./package.json" },
-  "files": ["index.js", "client.js", "cordis.patch.yml", "README.md"],
-  "engines": { "node": ">=24", "dsh": ">=0.2.1-rc.3 <0.3.0" },
+  "scripts": {
+    "test": "node --test"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=24",
+    "dsh": ">=0.2.1-rc.3 <0.3.0"
+  },
   "dsh": {
-    "bundle": { "patch": "./cordis.patch.yml" },
-    "client": { "platform": "web", "inject": ["@deepseek-ai/dsh-cordis-client-runner", "@deepseek-ai/dsh-client-ui-slots", "@deepseek-ai/dsh-client-connection"] }
-  }
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-cordis-client-runner",
+        "@deepseek-ai/dsh-client-ui-slots",
+        "@deepseek-ai/dsh-client-connection"
+      ]
+    }
+  },
+  "description": "Mark required or excluded passages in DeepSeek Harness chats and generate a checked Markdown article.",
+  "author": "IdaWasHere",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IdaWasHere/dsh-chat-to-article.git"
+  },
+  "homepage": "https://github.com/IdaWasHere/dsh-chat-to-article#readme",
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "markdown",
+    "article"
+  ]
 }
